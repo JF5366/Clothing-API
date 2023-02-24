@@ -15,7 +15,7 @@ export async function getClothes() {
     const options = {
       method: "GET",
       headers: {
-        "X-RapidAPI-Key": "b1f9c948aemsh08fc70eb749fe0bp13eaa2jsn7cfce4fd6bfe",
+        "X-RapidAPI-Key": key,
         "X-RapidAPI-Host": "asos2.p.rapidapi.com"
       }
     };

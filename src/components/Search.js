@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function Form({ getClothes }) {
+function Search({ getClothes }) {
   let [input, setInput] = useState("");
 
   function handleChange(e) {
@@ -14,12 +14,15 @@ function Form({ getClothes }) {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="searchBox">
         <input value={input} onChange={handleChange} />
         <button>Search</button>
+        
       </form>
+    {/* //  console.log({input}) */}
     </div>
   );
+  
 }
 
-export default Form;
+export default Search;

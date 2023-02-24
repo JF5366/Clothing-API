@@ -1,5 +1,5 @@
 .App {
-  font-family: sans-serif;
+  font-family: 'Cormorant Garamond', serif;
   text-align: center;
 }
 /* body {
@@ -11,15 +11,21 @@
   -moz-osx-font-smoothing: grayscale;
 } */
 
+
+
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
+
 .header {
   color: white;
   background-color: black;
   text-align: center;
+  height: 2em;
+  padding-top: 1em;
 }
 .mainPage {
   background-color: white;
@@ -27,8 +33,8 @@ code {
   width: 100vw;
 }
 
-.starshipCard {
-  background-color: #2f4f4f;
+.clothingTypeCard {
+  background-color: #7f8d8d7c;
   min-height: 2em;
   padding: 3em;
   display: flex;
@@ -49,14 +55,32 @@ code {
   grid-gap: 1.5em;
   padding: 4em;
 }
+.dresses{
+  display: flex;
+  flex-direction: column;
+  margin: 1em;
+}
+.imageCards{
+  display: flex;
+  /* border: 5px solid red;  */
 
-.starshipCard img {
+}
+.clothingTypeCard img {
   width: 200px;
   height: 200px;
+  border: 1px solid red;
+}
+.search{
+  border: 1px solid orange;
+}
+.searchCard{
+  border: 1px solid green;
 }
 
 
-
+.dressCard{
+  border: 1px solid pink;
+}
 
 
 

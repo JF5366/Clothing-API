@@ -1,0 +1,41 @@
+.navbar{
+    width: 100%;
+    min-height: 6vh;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #eee;
+    transition: all .7s ease-in;
+  }
+  .scrolled{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgb(244, 246, 255);
+  }
+  
+  .logo img{
+    width: 50px;
+  }
+
+  .navigation {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(244, 246, 255);
+    color: white;
+    padding: 15px;
+    font-size: 2em;
+    overflow: hidden;
+    padding: 15px;
+  
+  }
+  .navigation a{
+    text-decoration: none;
+    text-align: center;
+  }
+  .navigation a:hover {
+    background-color: rgb(179, 174, 174);
+    color: rgb(255, 255, 255);
+  }

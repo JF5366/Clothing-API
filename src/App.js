@@ -1,45 +1,37 @@
 import "./App.css";
 
-import { useEffect, useState } from "react";
-import { getClothes } from "./services/asos-api";
 import Header from "./components/Header";
-import ClothingTypeCard from "./components/ClothingTypeCard";
-import Form from "./components/Form";
+import Main from './pages/Main';
+import About from "./pages/About";
+import Nav from "./components/Navbar";
+import { Route, Routes } from "react-router-dom";
+import Dresses from "./pages/Dresses";
+import Pants from "./pages/Pants";
+import Shoes from "./pages/Shoes";
+import Tops from "./pages/Tops";
+import Navbar from "./components/Navbar";
 
 export default function App() {
-  let [clothes, setClothes] = useState([]);
 
-  let getData = async () => {
-    let allClothing = await getClothes(); //getClothes from the asos api
-    console.log(allClothing);
-
-    let clothingComponents = allClothing.products.map((item) => {
-      console.log(item);
-      let imgUrl = "https://" + item.imageUrl;
-      console.log(imgUrl);
-
-      return (
-        <div className="clothing">
-          <ClothingTypeCard name={item.name} id={item.id} imgsrc={imgUrl} />
-        </div>
-      );
-    });
-
-    setClothes(clothingComponents);
-  };
-
-  useEffect(() => {
-    getData("");
-  }, []);
-
+  
   return (
-    <div className="mainPage">
+    <div className="App">
       <Header />
-      <div className="parent">{clothes}</div>
-      <div>
-          <h1>Search for clothes</h1>
-          <Form getClothes={getClothes} />
-       </div>
+      <Navbar />
+      <Routes>
+        <Route  path="/" element ={<Main />}/>
+        <Route  path="/about" element ={<About />}/>
+        <Route  path="/dresses" element ={<Dresses />}/>
+        <Route  path="/pants" element ={<Pants />}/>
+        <Route  path="/shoes" element ={<Shoes />}/>
+        <Route  path="/tops" element ={<Tops />}/>
+       {/* // <Route  path="/price/:symbol" element ={<Price />}/>
+ 
+        <Route path='*' element={<Navigate to="/" />} />
+
+          <Route path='*' element="Page does not exist" /> */}
+
+      </Routes>
     </div>
   );
 }
