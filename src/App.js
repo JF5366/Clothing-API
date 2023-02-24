@@ -1,25 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
 
-function App() {
+import { useEffect, useState } from "react";
+import { getClothes } from "./services/asos-api";
+import Header from "./components/Header";
+import ClothingTypeCard from "./components/ClothingTypeCard";
+import Form from "./components/Form";
+
+export default function App() {
+  let [clothes, setClothes] = useState([]);
+
+  let getData = async () => {
+    let allClothing = await getClothes(); //getClothes from the asos api
+    console.log(allClothing);
+
+    let clothingComponents = allClothing.products.map((item) => {
+      console.log(item);
+      let imgUrl = "https://" + item.imageUrl;
+      console.log(imgUrl);
+
+      return (
+        <div className="clothing">
+          <ClothingTypeCard name={item.name} id={item.id} imgsrc={imgUrl} />
+        </div>
+      );
+    });
+
+    setClothes(clothingComponents);
+  };
+
+  useEffect(() => {
+    getData("");
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="mainPage">
+      <Header />
+      <div className="parent">{clothes}</div>
+      <div>
+          <h1>Search for clothes</h1>
+          <Form getClothes={getClothes} />
+       </div>
     </div>
   );
 }
-
-export default App;
