@@ -1,7 +1,7 @@
 export async function getClothes(search) {
     //let randomNum = Math.floor(Math.random() * 1000)
     // let search = ""; //try passing 'search' as a param in getClothes so you can enter it elsewhere
-    let resultsCount = 10;
+    let resultsCount = 9;
     const key = process.env.REACT_APP_KEY;
   
     let url = `https://asos2.p.rapidapi.com/products/v2/list?store=US&offset=0&categoryId=0&limit=${resultsCount}&country=US&sort=freshness&q=${search}&currency=USD&sizeSchema=US&lang=en-US`;

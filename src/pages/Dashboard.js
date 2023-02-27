@@ -41,11 +41,7 @@ export default function Main() {
             
             {/* {clothes} */}
         </div>
-        <div getClothes={getEtsy}>
-            <h1>Etsy Listings</h1>
 
-            <div id="etsy-listings"></div>
-        </div>
         <div className="search">
             {/* <h1>Search for clothes</h1>
             <Search getClothes={getClothes} />

@@ -23,7 +23,7 @@ export default function Dresses(){
         let imgUrl = "https://" + item.imageUrl;
   
         return (
-          <div className="dresses">
+          <div >
                 <ClothingTypeCard name={item.name} id={item.id} imgsrc={imgUrl} />
           </div>
         );
@@ -38,11 +38,12 @@ export default function Dresses(){
 
     return(
         <div className="dresses">
+          <button className="back" onClick={goBack}>back</button>
             <h1>Dresses</h1>
             <button onClick={getData}>Call Dresses API</button>
            <div className="imageCards"> {dresses}</div>
 
-             <button onClick={goBack}>Back</button>
+             
             
         </div>
     )
