@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 
 
 export default function Dresses(){
-    let {dress} = useParams() //not sure what this will be yet
+ 
     let navigate = useNavigate() 
     function goBack(){
         navigate(-1)
@@ -19,12 +19,14 @@ export default function Dresses(){
       let allDresses = await getClothes("dresses");
       console.log(allDresses);
   
-      let dressComponents = allDresses.products.map((item) => { //(item, index??) //allDresses.products.map for asos
+      let dressComponents = allDresses.products.map((item) => {
         let imgUrl = "https://" + item.imageUrl;
-  
         return (
           <div >
-                <ClothingTypeCard name={item.name} id={item.id} imgsrc={imgUrl} />
+                <Link to={`/dresses/${item.name}`}>
+                  
+                  <ClothingTypeCard name={item.name} key={item.name} id={item.id} imgsrc={imgUrl} clothingItem={dresses}/>
+                </Link>
           </div>
         );
       });
@@ -41,7 +43,12 @@ export default function Dresses(){
           <button className="back" onClick={goBack}>back</button>
             <h1>Dresses</h1>
             <button onClick={getData}>Call Dresses API</button>
-           <div className="imageCards"> {dresses}</div>
+            
+            
+            <div className="imageCards"> 
+                {/* <Link to={`/pages/dresses/${item.name}`}> {dresses}</Link> */}
+                {dresses}
+                </div>
 
              
             

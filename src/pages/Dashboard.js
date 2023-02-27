@@ -28,7 +28,7 @@ export default function Main() {
                <div className="linkText"> <h1 className='title'>PANTS</h1>
                 <span className='subtitle'>SHOP NOW</span></div> </Link>
             <Link to="/shoes" className="shoesLink">
-            <div className="linkText"> <h1 className='title'>SHOES</h1>
+                 <div className="linkText"> <h1 className='title'>SHOES</h1>
                 <span className='subtitle'>SHOP NOW</span></div> </Link>
             <Link to="/tops" className="topsLink">
             <div className="linkText"> <h1 className='title'>TOPS</h1>
