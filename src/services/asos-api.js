@@ -1,16 +1,12 @@
-export async function getClothes() {
+export async function getClothes(search) {
     //let randomNum = Math.floor(Math.random() * 1000)
-    let search = "boho";
-    let resultsCount = 3;
+    // let search = ""; //try passing 'search' as a param in getClothes so you can enter it elsewhere
+    let resultsCount = 10;
     const key = process.env.REACT_APP_KEY;
   
     let url = `https://asos2.p.rapidapi.com/products/v2/list?store=US&offset=0&categoryId=0&limit=${resultsCount}&country=US&sort=freshness&q=${search}&currency=USD&sizeSchema=US&lang=en-US`;
-  
-    //let url = 'https://asos2.p.rapidapi.com/categories/list?country=US&lang=en-US'
-    //Use this url to get the data, cope obj and paste into test editor, search for categoryId
-    //codes:
-    //4209  = shoes
-    //4208 = denim
+
+    
   
     const options = {
       method: "GET",
@@ -21,10 +17,10 @@ export async function getClothes() {
     };
   
     try {
-      let response = await fetch(url, options); // returns a Promise
+      let response = await fetch(url, options); 
       let data = await response.json();
-      console.log(data);
-      return data; // setMovie(data);
+      // console.log(data);
+      return data;
     } catch (error) {
       console.log("something went wrong");
     }

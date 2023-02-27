@@ -8,53 +8,48 @@ import Dresses from "./Dresses";
 import Pants from "./Pants";
 import Shoes from "./Shoes";
 import Tops from "./Tops";
-
+import Carousel from "../components/Carousel";
+import {getEtsy} from '../services/etsy-api'
 
 
 export default function Main() {
-    let [clothes, setClothes] = useState([]);
-  
-    let getData = async () => {
-      let allClothing = await getClothes(); //getClothes from the asos api
-      console.log(allClothing);
-  
-      let clothingComponents = allClothing.products.map((item) => { //(item, index??)
-        let imgUrl = "https://" + item.imageUrl;
-  
-        return (
-          <div className="clothing">
-            <Link >
-                <ClothingTypeCard name={item.name} id={item.id} imgsrc={imgUrl} />
-            </Link>
-          </div>
-        );
-      });
-  
-      setClothes(clothingComponents);
-    };
-  
-    useEffect(() => {
-      getData("");
-    }, []);
+    
   
     return (
       <div className="mainPage">
-        <div className="parent">
-            <Link to="/dresses"><Dresses className="dressCard" clothes={clothes} />Dresses</Link>
-            <Link to="/pants">
-                <Pants className="pantsCard" clothes={clothes} />
-                Pants
-                </Link>
-            <Link to="/shoes"><Shoes className="pantsCard" clothes={clothes} />Shoes</Link>
-            <Link to="/tops"><Tops className="pantsCard" clothes={clothes} />Tops</Link>
-            
+        <div className="carouselParent">
+            <Carousel />
+        </div>
+        <div className="dashParent">
+            <Link to="/dresses" className="dressesLink" key="dressesLink">
+                <div className="linkText"> <h1 className='title'>DRESSES</h1>
+                <span className='subtitle'>SHOP NOW</span></div> </Link>
+            <Link to="/pants" className="pantsLink">
+               <div className="linkText"> <h1 className='title'>PANTS</h1>
+                <span className='subtitle'>SHOP NOW</span></div> </Link>
+            <Link to="/shoes" className="shoesLink">
+            <div className="linkText"> <h1 className='title'>SHOES</h1>
+                <span className='subtitle'>SHOP NOW</span></div> </Link>
+            <Link to="/tops" className="topsLink">
+            <div className="linkText"> <h1 className='title'>TOPS</h1>
+                <span className='subtitle'>SHOP NOW</span></div> </Link>
+             
+{/*            
+            <Link to="/shoes" className="shoesLink linkCard"><Shoes className="pantsCard card" clothes={clothes} />Shoes</Link>
+            <Link to="/tops" className="topsLink linkCard"><Tops className="pantsCard card" clothes={clothes} />Tops</Link>
+             */}
             
             {/* {clothes} */}
         </div>
+        <div getClothes={getEtsy}>
+            <h1>Etsy Listings</h1>
+
+            <div id="etsy-listings"></div>
+        </div>
         <div className="search">
-            <h1>Search for clothes</h1>
+            {/* <h1>Search for clothes</h1>
             <Search getClothes={getClothes} />
-            <SearchDisplay clothes={clothes} />
+            <SearchDisplay clothes={clothes} /> */}
          </div>
       </div>
     );
