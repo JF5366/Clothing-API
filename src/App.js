@@ -1,6 +1,7 @@
 import "./App.css";
 
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 import Main from './pages/Main';
 import About from "./pages/About";
 import Nav from "./components/Navbar";
@@ -32,6 +33,7 @@ export default function App() {
          {/* <Route path='*' element="Page does not exist" /> */}
 
       </Routes>
+      <Footer />
     </div>
   );
 }

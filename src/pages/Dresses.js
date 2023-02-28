@@ -25,7 +25,7 @@ export default function Dresses(){
           <div >
                 <Link to={`/dresses/${item.name}`}>
                   
-                  <ClothingTypeCard name={item.name} key={item.name} id={item.id} imgsrc={imgUrl} clothingItem={dresses}/>
+                  <ClothingTypeCard name={item.name} key={item.name} id={item.id} imgsrc={imgUrl} clothingItem={item}/>
                 </Link>
           </div>
         );

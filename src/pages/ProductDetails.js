@@ -7,7 +7,7 @@ export default function ProductDetails({clothingItem}){
     function goBack(){
         navigate(-1)
     }
-    const thisClothingItem = clothingItem.product.filter(
+    const thisClothingItem = clothingItem.filter(
         (thisClothingItem) => thisClothingItem.name === itemname
       );
 console.log(thisClothingItem)
