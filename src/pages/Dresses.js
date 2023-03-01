@@ -59,11 +59,11 @@ export default function Dresses(){
 
     return(
         <div className="dresses">
-          <button className="back" onClick={goBack}>back</button>
+              <div className="buttons">
+                <button className="back" onClick={goBack}>Back</button>
+                <button onClick={getData}>Call Tops API</button>
+              </div>
             <h1>Dresses</h1>
-            <button onClick={getData}>Call Dresses API</button>
-            
-            
             <div className="imageCards"> 
                 {dresses} 
                 {/* <Link to={`/pages/dresses/${item.name}`}> {dresses}</Link> */}

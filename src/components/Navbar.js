@@ -21,8 +21,9 @@ const onMouseLeave = () => {
 ////////////////////////
 const [scrolled,setScrolled]=React.useState(false);
       const handleScroll=() => {
+        console.log(handleScroll)
           const offset=window.scrollY;
-          if(offset > 200 ){
+          if(offset > 100 ){
             setScrolled(true);
           }
           else{
@@ -32,7 +33,7 @@ const [scrolled,setScrolled]=React.useState(false);
       
         useEffect(() => {
           window.addEventListener('scroll',handleScroll)
-        })
+        }, [])
       let navbarClass=['navbar'];
         if(scrolled){
           navbarClass.push('scrolled');
@@ -44,6 +45,7 @@ const [scrolled,setScrolled]=React.useState(false);
     return(
         <div className='nav'>
             <header className={navbarClass.join(" ")}>
+            {/* <header className='navbar'> */}
                       <ul className='nav-side-menu'>
                           <li className='nav-items '>
                               <Link to="/" className='nav-links'> Home </Link>

@@ -41,11 +41,11 @@ export default function Activewear(){
 
     return(
         <div className="activewear">
-          <button className="back" onClick={goBack}>back</button>
+              <div className="buttons">
+              <button className="back" onClick={goBack}>Back</button>
+              <button onClick={getData}>Call Tops API</button>
+            </div>
             <h1>Activewear</h1>
-            <button onClick={getData}>Call Activewear API</button>
-            
-            
             <div className="imageCards"> 
                 {activewear} 
             </div>

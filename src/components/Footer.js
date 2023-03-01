@@ -1,5 +1,5 @@
 import {ReactSocialMediaIcons} from 'react-social-media-icons';
-
+import './Footer.css'
 
 
 function Footer(){

@@ -1,5 +1,43 @@
 
-
+.buttons{
+    position: absolute;
+    margin-bottom: 3em;
+}
 .clothingItem{
-    border: red;
+   
+}
+
+/* 204712578 */
+
+.itemInfo{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    padding: 30px;
+}
+.itemInfo img{
+    border: 1px solid black;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    margin: 20px;
+}
+.itemText{
+    /* border: 1px solid red; */
+    width: 30%;
+    padding: 30px;
+}
+.itemText h1{
+    font-size: 1.6em;
+    font-weight: bold;
+    margin: 30px 20px;
+    text-decoration: underline;
+}
+.itemText h2{
+    font-size: 1.4em;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.itemText h3{
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 20px;
 }

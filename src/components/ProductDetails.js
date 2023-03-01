@@ -23,11 +23,13 @@ export default function ProductDetails(){
             return (
               <div key={item.id} className="itemInfo">
                 <img src={imgUrl} alt="" />
-                <h1> Name: {item.name} </h1>
-                <h2>Brand: {item.brandName}</h2>
-                <h3>Price: {item.price.current.text}</h3>
-                <h3>Color: {item.colour}</h3>
-                <button>ADD TO CART</button>       
+                <div className="itemText">
+                  <h1> {item.name} </h1>
+                  <h2>Brand: {item.brandName}</h2>
+                  <h3>Price: {item.price.current.text}</h3>
+                  <h3>Color: {item.colour}</h3>
+                  <button>ADD TO CART</button>    
+                </div>   
              </div>  
             );
           });
@@ -41,18 +43,17 @@ export default function ProductDetails(){
 
       return(
          <div>
+           <div >
+              {  (location.pathname === `/products/${productId}`) && (
+              <div className="buttons">
+                <button onClick={goBack}>Back</button>
+                <button onClick={getData}>Call Item API</button>
+              </div>
+              )}      
+            </div>
             <div className="clothingItem">{item}</div> 
 
-            <div >
-              {  (location.pathname === '/products/204712578') && (
-              <div>
-              <button onClick={goBack}>Back</button>
-              <button onClick={getData}>Call Item API</button>
-              </div>
-              )}
-                
-                    
-            </div>
+           
 
         </div>
     )

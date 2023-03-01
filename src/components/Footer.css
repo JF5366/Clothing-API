@@ -1,0 +1,31 @@
+/* //////////////FOOTER///////////////// */
+
+.footer {
+    color: rgb(117, 117, 117);
+    font-size: 14px;
+    text-align: center;
+    padding: 15px;
+    background: rgb(219, 219, 219);
+    bottom: 0px;
+    height: 12%;
+    width: 100%;
+    position: relative;
+    margin-top: 40em;
+  }
+  
+  .footer-links {
+      margin-bottom: 10px;
+      z-index: 2;
+      margin-top: 10px;
+   }
+   .footer-links > a {
+        margin: 10px;
+        
+        color: rgb(117, 117, 117);
+        text-decoration: none;
+      }
+    .footer-links.icon{
+      margin-top: 5px;
+    }
+  
+  

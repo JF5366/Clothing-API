@@ -43,12 +43,12 @@ export default function Coats(){
 
     return(
         <div className="coats">
-          <button className="back" onClick={goBack}>back</button>
+              <div className="buttons">
+                <button className="back" onClick={goBack}>Back</button>
+                <button onClick={getData}>Call Tops API</button>
+             </div>
             <h1>Coats</h1>
-            <button onClick={getData}>Call Coats API</button>
-            
-            
-            <div className="imageCards"> 
+             <div className="imageCards"> 
                 {coats} 
                 </div>
         </div>

@@ -40,13 +40,14 @@ export default function Pants(){
 
     return(
         <div className="pants">
-          <button className="back" onClick={goBack}>back</button>
+            <div className="buttons">
+              <button className="back" onClick={goBack}>Back</button>
+              <button onClick={getData}>Call Tops API</button>
+            </div>
             <h1>Pants</h1>
-            <button onClick={getData}>Call Pants API</button>
-
             <div className="imageCards"> 
                 {pants} 
-                   </div>
+            </div>
 
         </div>
     )

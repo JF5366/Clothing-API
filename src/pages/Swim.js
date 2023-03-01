@@ -43,11 +43,11 @@ export default function Swim(){
 
     return(
         <div className="swim">
-          <button className="back" onClick={goBack}>back</button>
+              <div className="buttons">
+                  <button className="back" onClick={goBack}>Back</button>
+                 <button onClick={getData}>Call Tops API</button>
+             </div>
             <h1>Swimwear</h1>
-            <button onClick={getData}>Call Swim API</button>
-            
-            
             <div className="imageCards"> 
                 {swim} 
                 </div>

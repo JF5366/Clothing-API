@@ -43,11 +43,11 @@ export default function Accessories(){
 
     return(
         <div className="accessories">
-          <button className="back" onClick={goBack}>back</button>
+            <div className="buttons">
+              <button className="back" onClick={goBack}>Back</button>
+              <button onClick={getData}>Call Tops API</button>
+            </div>
             <h1>Accessories</h1>
-            <button onClick={getData}>Call Accessories API</button>
-            
-            
             <div className="imageCards"> 
                 {accessories} 
                 </div>

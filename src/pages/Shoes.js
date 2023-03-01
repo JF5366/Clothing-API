@@ -42,9 +42,11 @@ export default function Shoes(){
 
     return(
         <div className="shoes">
-          <button className="back" onClick={goBack}>back</button>
+              <div className="buttons">
+                 <button className="back" onClick={goBack}>Back</button>
+                  <button onClick={getData}>Call Tops API</button>
+            </div>
             <h1>Shoes</h1>
-            <button onClick={getData}>Call Shoes API</button>
            <div className="imageCards"> {shoe}</div>
 
              

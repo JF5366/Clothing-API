@@ -13,6 +13,10 @@
         display: flex;
         flex-direction: column;
     }
+    .carouselCard{
+      padding:10px;
+      transform: translate(-1%, -2%);
+    }
    .legend{
        /*  cant figre out how to change the writing style    */
      z-index: 9;

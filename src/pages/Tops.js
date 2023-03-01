@@ -21,28 +21,31 @@ export default function Tops(){
   
       let topComponents = allTops.products.map((item) => { //(item, index??) 
         let imgUrl = "https://" + item.imageUrl;
-  
         return (
-          <div >
+          <div key={item.id}>
+            <Link to={`/products/${item.id}`}>
                 <ClothingTypeCard name={item.name} id={item.id} imgsrc={imgUrl} className="topCard"/>
                 <ProductDetails id={item.id}>Product details</ProductDetails>
-          </div>
-        );
-      });
-  
-      setTop(topComponents);
-    };
-  
+             </Link>
+            </div>
+          
+          );
+        });
+    
+        setTop(topComponents);
+      };
     // useEffect(() => {
     //   getData("");
     // }, []);
 
     return(
         <div className="tops">
-          <button className="back" onClick={goBack}>back</button>
-            <h1 className="topsHeader">Tops</h1>
+          <div className="buttons">
+            <button className="back" onClick={goBack}>Back</button>
             <button onClick={getData}>Call Tops API</button>
-           <div className="imageCards"> {top}</div>
+          </div>
+          <h1 className="topsHeader">Tops</h1>
+          <div className="imageCards"> {top}</div>
 
              
             
