@@ -3,35 +3,36 @@ import { Link, Outlet, useNavigate, useParams } from "react-router-dom";
 import ClothingTypeCard from "../components/ClothingTypeCard";
 import { useEffect, useState } from "react";
 import ProductDetails from "../components/ProductDetails";
+//import { getEtsy } from "../services/etsy-api";
 
 
-
-export default function Pants(){
+export default function Activewear(){
+  // let params = useParams(); 
     let navigate = useNavigate() 
     function goBack(){
         navigate(-1)
     }
     
-    let [pants, setPants] = useState([]);
+    let [activewear, setActivewear] = useState([]);
   
     let getData = async () => {
-      let allPants = await getClothes("womens pants");
-      console.log(allPants);
+      let allActivewear = await getClothes("womens gym");
+      console.log(allActivewear);
   
-      let pantsComponents = allPants.products.map(item => {
+      let activewearComponents = allActivewear.products.map(item => {
         let imgUrl = "https://" + item.imageUrl;
         return (
           <div key={item.id}>
                 <Link to={`/products/${item.id}`}>
                     <ClothingTypeCard name={item.name} key={item.id} id={item.id} imgsrc={imgUrl} clothingItem={{item}}/>
                     <ProductDetails id={item.id}>Product details</ProductDetails>
-                  </Link>
+                    </Link>
           </div>
           
         );
       });
   
-      setPants(pantsComponents);
+      setActivewear(activewearComponents);
     };
   
     // useEffect(() => {
@@ -39,15 +40,15 @@ export default function Pants(){
     // }, []);
 
     return(
-        <div className="pants">
+        <div className="activewear">
           <button className="back" onClick={goBack}>back</button>
-            <h1>Pants</h1>
-            <button onClick={getData}>Call Pants API</button>
-
+            <h1>Activewear</h1>
+            <button onClick={getData}>Call Activewear API</button>
+            
+            
             <div className="imageCards"> 
-                {pants} 
-                   </div>
-
+                {activewear} 
+            </div>
         </div>
     )
 }

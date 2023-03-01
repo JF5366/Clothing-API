@@ -1,10 +1,10 @@
 function ClothingTypeCard(props) {
     return (
       <div className="clothingTypeCard">
-        <div>
+        <div className="cardImage">
             <img src={props.imgsrc} alt="" />
         </div>
-        <p className="name">{props.name}</p>
+        <p className="cardLegend">{props.name}</p>
       </div>
     );
   }

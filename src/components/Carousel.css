@@ -1,10 +1,11 @@
 /* //////////////CAROUSEL///////////////// */
 .carouselParent{
-    width: 80vw;
+    width: 100vw;
+    height: 70vh;
     border: 2px solid black;
     margin: auto;
     z-index: 5;
-    margin-top: 3em;
+    margin-top: 0em;
    }
    .carousel{
        /*  this is both the upper and lower part of the carousel - it affects too many compondents   */
@@ -15,15 +16,16 @@
    .legend{
        /*  cant figre out how to change the writing style    */
      z-index: 9;
-     top: 50%;
+     bottom: 10%;
      height: 5em;
      width: 5em;
      padding-top: 2em;
+     display: none;
    }
    .slide{
-    /*  this is the top image part   */
-     /* border: 5px solid orange; */
-     height: 15em;
+    /*  this is the top image part  and determines the height */
+     /* border: 5px solid green; */
+     height: 70vh;
    }
 
    
@@ -31,18 +33,19 @@
    div.carousel.carousel-slider{
     /* border: 5px solid orange; */
     margin: 0;
-     height: 25em;
+     height: 100%;
    }
    .carousel .thumbs-wrapper{
-       /*     */
+      display: none;
       padding: 0px;
       margin: 0px;
       /* border: 5px solid orange; */
       
    }
 
-  div.slider-wrapper.axis-horizontal{
+ .slider-wrapper.axis-horizontal{
     margin: 0px;
     height: 100%;
+    /* border: 2px solid red; */
   }
     

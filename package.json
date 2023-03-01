@@ -14,6 +14,7 @@
     "react-social-icons": "^5.15.0",
     "react-social-media-icons": "^10.0.4",
     "social-media-icons-react": "^0.0.1-security",
+    "styled-components": "^5.3.6",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

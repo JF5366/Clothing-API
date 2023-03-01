@@ -9,7 +9,7 @@ import Pants from "./Pants";
 import Shoes from "./Shoes";
 import Tops from "./Tops";
 import Carousel from "../components/Carousel";
-import {getEtsy} from '../services/etsy-api'
+
 
 
 export default function Main() {
@@ -19,6 +19,10 @@ export default function Main() {
       <div className="mainPage">
         <div className="carouselParent">
             <Carousel />
+        </div>
+        <div className="dashHeader">
+            <h1>DISCOVER FASHION</h1>
+            <h3>Shop the hottest trands from ...</h3>
         </div>
         <div className="dashParent">
             <Link to="/dresses" className="dressesLink" key="dressesLink">
@@ -30,17 +34,31 @@ export default function Main() {
             <Link to="/shoes" className="shoesLink"> 
                  <div className="linkText"> <h1 className='title'>SHOES</h1>
                 <span className='subtitle'>SHOP NOW</span></div> </Link>
+
             <Link to="/tops" className="topsLink">
             <div className="linkText"> <h1 className='title'>TOPS</h1>
                 <span className='subtitle'>SHOP NOW</span></div> </Link>
-             
-{/*            
-            <Link to="/shoes" className="shoesLink linkCard"><Shoes className="pantsCard card" clothes={clothes} />Shoes</Link>
-            <Link to="/tops" className="topsLink linkCard"><Tops className="pantsCard card" clothes={clothes} />Tops</Link>
-             */}
-            
-            {/* {clothes} */}
-        </div>
+
+                <Link to="/activewear" className="activewearLink">
+            <div className="linkText"> <h1 className='title'>ACTIVEWEAR</h1>
+                <span className='subtitle'>SHOP NOW</span></div> </Link>
+
+                <Link to="/coats" className="coatsLink">
+            <div className="linkText"> <h1 className='title'>COATS</h1>
+                <span className='subtitle'>SHOP NOW</span></div> </Link>
+
+                <Link to="/lounge" className="loungeLink">
+            <div className="linkText"> <h1 className='title'>LOUNGE</h1>
+                <span className='subtitle'>SHOP NOW</span></div> </Link>
+
+                <Link to="/swim" className="swimwearLink">
+            <div className="linkText"> <h1 className='title'>SWIMWEAR</h1>
+                <span className='subtitle'>SHOP NOW</span></div> </Link>
+
+                <Link to="/accessories" className="accessoriesLink">
+            <div className="linkText"> <h1 className='title'>ACCESSORIES</h1>
+                <span className='subtitle'>SHOP NOW</span></div> </Link>
+             </div>
 
         <div className="search">
             {/* <h1>Search for clothes</h1>

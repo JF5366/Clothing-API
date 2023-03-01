@@ -1,17 +1,17 @@
 import { getClothes } from "../services/asos-api";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, Outlet, useNavigate, useParams } from "react-router-dom";
 import ClothingTypeCard from "../components/ClothingTypeCard";
 import { useEffect, useState } from "react";
+import ProductDetails from "../components/ProductDetails";
 //import { getEtsy } from "../services/etsy-api";
 
 
 export default function Dresses(){
- 
+  // let params = useParams(); 
     let navigate = useNavigate() 
     function goBack(){
         navigate(-1)
     }
-    
     
     let [dresses, setDresses] = useState([]);
   
@@ -19,15 +19,34 @@ export default function Dresses(){
       let allDresses = await getClothes("dresses");
       console.log(allDresses);
   
-      let dressComponents = allDresses.products.map((item) => {
+      let dressComponents = allDresses.products.map(item => {
         let imgUrl = "https://" + item.imageUrl;
         return (
-          <div >
-                <Link to={`/dresses/${item.name}`}>
+          <div key={item.id}>
+                <Link to={`/products/${item.id}`}>
+                    <ClothingTypeCard name={item.name} key={item.id} id={item.id} imgsrc={imgUrl} clothingItem={{item}}/>
+                    <ProductDetails id={item.id}>Product details</ProductDetails>
+                      {/* <ProductDetails 
+                        name={item.name} 
+                        key={item.id} 
+                        id={item.id} 
+                        imgsrc={imgUrl} 
+                        brand={item.brandName}
+                        price={item.price.current.text}
+                        color={item.colour}
+                        /> */}
+                  </Link>
                   
-                  <ClothingTypeCard name={item.name} key={item.name} id={item.id} imgsrc={imgUrl} clothingItem={item}/>
-                </Link>
+                  
+            
+                  {/* <ClothingTypeCard name={item.name} key={item.id} id={item.id} imgsrc={imgUrl} clothingItem={{item}}/> */}
+                  
+                  
+                  {/* <Outlet /> */}
+                  {/* <ProductDetails dresses={item} >{item.name}</ProductDetails>
+                 */}
           </div>
+          
         );
       });
   
@@ -46,11 +65,16 @@ export default function Dresses(){
             
             
             <div className="imageCards"> 
+                {dresses} 
                 {/* <Link to={`/pages/dresses/${item.name}`}> {dresses}</Link> */}
-                {dresses}
+                {/* <ProductDetails dresses={dresses} /> */}
+                {/* if(useLocation hook to check current path)? <Outlet /> : {dresses} */}
                 </div>
 
-             
+              {/* <div>
+                 !params.id && (<div>{dresses}</div>)
+                 <Outlet />
+                </div>                */}
             
         </div>
     )

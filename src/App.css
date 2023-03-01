@@ -42,6 +42,13 @@ code {
   flex-direction: column;
   height: 100%;
 }
+
+.dashHeader{
+  margin-top: 15px;
+}
+
+
+
 /* ///////////CARDS/////////// */
 .clothingTypeCard {
   /* background-color: #7f8d8d7c; */
@@ -54,7 +61,7 @@ code {
   /* border: 1px solid rgb(102, 22, 207); */
 }
 
-
+/* ///////////DashCards/////////// */
 .pantsLink{
   background-image: url(https://images.asos-media.com/products/stradivarius-petite-wide-leg-relaxed-dad-pants-in-black/203912199-2?$n_320w$&wid=317&fit=constrain);
 }
@@ -70,6 +77,25 @@ code {
 .topsLink{
   background-image: url(https://images.asos-media.com/products/topshop-long-sleeve-casual-shirt-in-olive/203004675-1-khaki?$n_640w$&wid=513&fit=constrain);
 }
+
+.activewearLink{
+  background-image: url(https://images.asos-media.com/products/nike-sweatpants-in-pink-pink/203564816-2?$n_320w$&wid=317&fit=constrain);
+}
+
+.coatsLink{
+  background-image: url(https://images.asos-media.com/products/collusion-high-shine-hooded-puffer-jacket-with-curved-hem/200687860-2?$n_320w$&wid=317&fit=constrain);
+}
+.loungeLink{
+  background-image: url(https://images.asos-media.com/products/calvin-klein-ck-one-lounge-logo-sweatpants-in-blue/200603148-2?$n_320w$&wid=317&fit=constrain);
+}
+.swimwearLink{
+  background-image: url(https://images.asos-media.com/groups/asos-design-tie-front-satin-beach-shirt-in-floral-print-part-of-a-set/78397-group-1?$n_320w$&wid=317&fit=constrain);
+}
+.accessoriesLink{
+  background-image: url(https://images.asos-media.com/products/topshop-genna-quilted-grab-bag-in-black/204055532-2?$n_320w$&wid=317&fit=constrain);
+}
+
+
 
 
 .dashParent {
@@ -126,15 +152,7 @@ code {
 
 
 /* //////////////OTHER///////////////// */
-.name {
-  color: black;
-  background-color: rgba(245, 245, 245, 0.6);
-  position: absolute;
-  bottom: -40%;
-  left: 60%;
-  transform: translate(-60%, -20%);
-  padding: 0px;
-}
+
 /* //////////////Dresses///////////////// */
 .dresses{
   /* display: flex; */
@@ -144,7 +162,16 @@ code {
   width: 100%;
   height: 100%;
 }
+/* ///////////Tops/////////// */
 
+.topsHeader{
+  font-size: 3em;
+  text-decoration: bold;
+  color: rgb(61, 61, 61);
+  text-shadow: 1px 1px 2px rgb(83, 83, 83);
+  padding: 5px;
+}
+/* //////////////ProductPages///////////////// */
 .imageCards{
   /* border: 5px solid red;  */
   display: grid; 
@@ -156,12 +183,24 @@ code {
 
 
 }
+.cardImage{
+  padding: 30px;
+  margin: 10px;
+}
+.cardLegend {
+  color: black;
+  background-color: rgba(245, 245, 245, 0.74);
+  position: absolute;
+  bottom: -40%;
+  left: 60%;
+  transform: translate(-60%, -20%);
+  padding: 0px;
+}
 .clothingTypeCard {
-  padding-top: 10px;
-  padding-bottom: 10%;
-  margin-left: 5%;
+  padding-bottom: 20%;
+  margin-left: 0%;
   margin-bottom: 30%;
-  width: 85%;
+  width: 100%;
   /* border: 5px solid rgb(92, 45, 53); */
 }
 .clothingTypeCard img {  
@@ -183,6 +222,23 @@ code {
   position: absolute;
   left: 0;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* .search{
   border: 1px solid orange;
 }
@@ -190,6 +246,20 @@ code {
   border: 1px solid green;
 } */
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* //////////////FOOTER///////////////// */
 
 .footer {
   color: rgb(117, 117, 117);
@@ -265,28 +335,4 @@ code {
 
 
 
-
-/* ///////////////Etsy Listing Card/////////////// */
-
-
-#etsy-listings {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  width: 600px;
-  border: thin solid #323232;
-}
-
-.etsy-thumbnail {
-  width: 1700px;
-  margin: 10px;
-}
-
-.etsy-thumbnail img {
-  border: 20px solid #323232
-}
-
-/* a {
-  color: #0000ee;
-} */
 

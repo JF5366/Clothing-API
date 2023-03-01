@@ -2,6 +2,7 @@ import { getClothes } from "../services/asos-api";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import ClothingTypeCard from "../components/ClothingTypeCard";
 import { useEffect, useState } from "react";
+import ProductDetails from "../components/ProductDetails";
 //import { getEtsy } from "../services/etsy-api";
 
 
@@ -16,7 +17,7 @@ export default function Shoes(){
     let [shoe, setShoe] = useState([]);
   
     let getData = async () => {
-      let allShoes = await getClothes("shoes");
+      let allShoes = await getClothes("womens shoes");
       console.log(allShoes);
   
       let shoeComponents = allShoes.products.map((item) => { //(item, index??) 
@@ -24,7 +25,10 @@ export default function Shoes(){
   
         return (
           <div >
+            <Link to={`/products/${item.id}`}>
                 <ClothingTypeCard name={item.name} id={item.id} imgsrc={imgUrl} />
+                <ProductDetails id={item.id}>Product details</ProductDetails>
+                </Link>
           </div>
         );
       });

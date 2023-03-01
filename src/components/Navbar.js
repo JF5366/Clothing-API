@@ -1,11 +1,25 @@
 import {Link} from 'react-router-dom';
-import React,{useEffect} from 'react';
+import React,{useEffect, useState} from 'react';
 import './Navbar.css'
+import DropDown from './DropDown'
 
-// function Nav (props){
-    
+
+  
 const Navbar=() => {
-    const [scrolled,setScrolled]=React.useState(false);
+////////////////////////
+const [click, setClick] = useState(false)
+const [dropdown, setDropdown] = useState(false)
+const changeClick = () => setClick(!click)
+
+const onMouseEnter = () => {
+    setDropdown(true)
+}
+
+const onMouseLeave = () => {
+    setDropdown(false)
+}
+////////////////////////
+const [scrolled,setScrolled]=React.useState(false);
       const handleScroll=() => {
           const offset=window.scrollY;
           if(offset > 200 ){
@@ -22,25 +36,30 @@ const Navbar=() => {
       let navbarClass=['navbar'];
         if(scrolled){
           navbarClass.push('scrolled');
-        }
+        }    
     
+
+        /////////////
+
     return(
         <div className='nav'>
             <header className={navbarClass.join(" ")}>
-                <div className="logo">
-                    {/* my logo */}
-                </div>
-                <nav className="navigation">
-                            <Link to="/">
-                                <div>Main</div>
-                            </Link>
-                            <Link to="/about">
-                                <div>About</div>
-                            </Link>
-                            {/* <Link to="/price">
-                                <div>Price</div>
-                            </Link> */}
-                </nav>
+                      <ul className='nav-side-menu'>
+                          <li className='nav-items '>
+                              <Link to="/" className='nav-links'> Home </Link>
+                          </li>
+  
+                          <li className='nav-items' onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} >
+                              <Link className='nav-links'> Shop 
+                                  {dropdown && <DropDown />}
+                              </Link>
+                          </li>
+  
+                          <li className='nav-items'>
+                              <Link to="/about" className='nav-links'> About </Link>
+                          </li>
+  
+                      </ul>
              </header>
         </div>
     )
