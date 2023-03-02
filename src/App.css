@@ -265,7 +265,22 @@ code {
   width: 1.5em;
 }
 
+/* //////////////Cart//////////////// */
 
+.emptyCart{
+
+  height: 500px;
+  width: 500px;
+  border: 5px solid red; 
+ 
+ }
+ .fullCart{
+ 
+   height: 500px;
+   width: 500px;
+   border: 5px solid red; 
+  
+  }
 
 
 

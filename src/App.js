@@ -19,7 +19,7 @@ import Activewear from "./pages/categories/Activewear";
 import Coats from "./pages/categories/Coats";
 import Lounge from "./pages/categories/Lounge";
 import Cart from "./pages/Cart";
-import CartContext from './store/CartContext';
+// import CartContext from './store/CartSlice';
 import SearchPage from "./pages/SearchPage";
 
 export default function App() {

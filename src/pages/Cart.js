@@ -1,87 +1,81 @@
 import { CartContext } from "../App";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
-import { addCart, delCart } from "../store/action";
+import { Link, useNavigate } from "react-router-dom";
+import ClothingTypeCard from "../components/ClothingTypeCard";
+import ProductDetails from "../components/ProductDetails";
+import './Cart.css'
+import { addToCart, setCart } from "../store/CartSlice";
 
 
 const Cart = () => {
-    const state = useSelector((state) => state.handleCart);
+  let navigate = useNavigate() 
+  function goBack(){
+    navigate(-1)
+}
+///////////////////localStorage
+      // const [cartStorage, setCartStorage] = useState([]);
+
+      // useEffect(() => {
+      //   localStorage.setCartStorage('cartStorage', JSON.stringify(cartStorage));
+      // }, [cartStorage]);
+      // console.log(cartStorage)
+
+      /////////////////////////////////////////
+      // const [cartStorage, setCartStorage] = useState([]);
+
+///////////////////////////////////////////////////////
+    const state = useSelector((state) => state.cart);
     const dispatch = useDispatch();
   
-    const handleAdd = (item) => {
-      dispatch(addCart(item));
-    };
-    const handleDel = (item) => {
-      dispatch(delCart(item));
-    };
-  
-    const emptyCart = () => {
+    useEffect(() => {
+      console.log('this is our cart')
+      console.log(state)
+    }, [])
+
+    useEffect(() => {
+      const product = JSON.parse(localStorage.getItem('product'));
+      console.log(product)
+      if (product) {
+      //  setState(product); 
+       dispatch(setCart(product))
+      }
+    }, []);
+
+    return(
+    state.map(cartItem => {
+      let imgUrl = "https://" + cartItem.imageUrl;
       return (
-        <div className="emptyCart">
-              <h1>Cart is Empty</h1>
-        </div>
-      );
-    };
-    const cartItems = (product) => {
-      return (
-        <>
-              <div className="">
-                <div className="">
-                  <img
-                    src={product.image}
-                    alt={product.title}
-                    height="200px"
-                    width="180px"
-                  />
-                </div>
-                <div className="">
-                  <h3>{product.title}</h3>
-                  <p className="">
-                    {product.qty} X ${product.price} = $
-                    {product.qty * product.price}
-                  </p>
-                  <button
-                    className=""
-                    onClick={() => handleDel(product)}
-                  >
-                   Delete Item
-                  </button>
-                  <button
-                    className=""
-                    onClick={() => handleAdd(product)}
-                  >Add Item
-                  </button>
-                </div>
+        <div key={cartItem.id} className="cart">
+              <div className="buttons">
+                 <button className="back" onClick={goBack}>Back</button>
               </div>
-        </>
-      );
-    };
-    const buttons = () => {
-      return (
-        <>
-          <div className="">
-              <Link
-                to="/cart"
-                className="checkout"
-              >
-                Proceed to Checkout
-              </Link>
-          </div>
-        </>
-      );
-    };
-  
-    return (
-      <div>
-        <p>Coming Soon....</p>
-        <div>
-            {state === 0 && emptyCart()}
-            {/* {state !== 0 && state.map(cartItems)}
-            {state !== 0 && buttons()} */}
+            <Link to={`/products/${cartItem.id}`} className="cartLink">
+              <ClothingTypeCard className="cartClothingCard" name={cartItem.name} key={cartItem.id} id={cartItem.id} imgsrc={imgUrl} clothingItem={{cartItem}}/>
+              <ProductDetails className="cartClothingDetails" id={cartItem.id}>Product details</ProductDetails>
+            </Link>
+
+
         </div>
-      </div>
-    );
+       );
+      })
+  
+    )
+
+    // return (
+    //   <div>
+    //     <p>Coming Soon....</p>
+    //     <div className="cart">
+    //           <div className="buttons">
+    //             <button className="back" onClick={goBack}>Back</button>
+    //           </div>
+    //         <h1>Cart</h1>
+    //         <div className="imageCards"> 
+    //             {cart}
+    //         </div>
+    //      </div>
+    //     </div>
+    // );
   };
   
   export default Cart;
@@ -109,3 +103,64 @@ const Cart = () => {
   
 //   export default Cart;
   
+/////////////////////////////////////////
+
+// <>
+
+
+
+// <div className="">
+//   <div className="">
+//     <img
+//       src={product.image}
+//       alt={product.title}
+//       height="200px"
+//       width="180px"
+//     />
+//   </div>
+//   <div className="">
+//     <h3>{product.title}</h3>
+//     <p className="">
+//       {product.qty} X ${product.price} = $
+//       {product.qty * product.price}
+//     </p>
+//     <button
+//       className=""
+//       // onClick={() => handleDel(product)}
+//     >
+//      Delete Item
+//     </button>
+//     <button
+//       className=""
+//       // onClick={() => handleAdd(product)}
+//     >Add Item
+//     </button>
+//   </div>
+// </div>
+// </>
+// );
+// };
+// const buttons = () => {
+// return (
+// <>
+// <div className="">
+// <Link
+//   to="/cart"
+//   className="checkout"
+// >
+//   Proceed to Checkout
+// </Link>
+// </div>
+// </>
+// );
+// };
+
+
+// return (
+
+//   <div>
+//   {/* {state === 0 && emptyCart()} */}
+//   {/* {state !== 0 && state.map(cartItems)}
+//   {state !== 0 && buttons()} */}
+// </div>
+// )

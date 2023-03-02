@@ -1,42 +1,55 @@
 import { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { addCart } from "../store/action";
 import { getClothes } from "../services/asos-api";
 import './ProductDetails.css'
+import { addToCart } from "../store/CartSlice";
+import { getClothesDetails } from "../services/asosapiDetails";
 
 export default function ProductDetails(){
     let location = useLocation()
     let {id} = useParams()
 
-    const dispatch = useDispatch();
-    const addProduct = (product) => {
-      dispatch(addCart(product));
-      console.log(product)
-    };
-
     let navigate = useNavigate()      
     function goBack(){
         navigate(-1)
     }
-
-    let [product, setProduct] = useState([]);
-
-    let getData = async () => {
-        let productData = await getClothes(id);
-        console.log(productData);
+///////////////////localStorage///////////////////
+     const [cartStorage, setCartStorage] = useState([]);
+      const cart = useSelector(state => state.cart)
+      function handleClick(product){
+        dispatch(addToCart(product))
+  
+      localStorage.setItem('product', JSON.stringify([product, ...cart]));
+        console.log(product)
+      }
+      //////////////////////////////////////////////////////
+      
+      const dispatch = useDispatch()
+      
+      let [product, setProduct] = useState("");
+      let getData = async () => {
+        let productArray =[] 
         
-        let productComponents = productData.products.map((product) => {
-            let imgUrl = "https://" + product.imageUrl;
+        let productData = await getClothesDetails(id);
+        productArray.push(productData)
+        console.log(productArray);
+        
+        let productComponents = productArray.map((product) => {
+            let imgUrl = "https://" + product.media.images[0].url;
             return (
               <div key={product.id} className="productInfo">
                 <img src={imgUrl} alt="" />
                 <div className="productText">
                   <h1> {product.name} </h1>
-                  <h2>Brand: {product.brandName}</h2>
+                  <h2>Brand: {product.brand.name}</h2>
                   <h3>Price: {product.price.current.text}</h3>
-                  <h3>Color: {product.colour}</h3>
-                  <button onClick={() => addProduct(product)}>ADD TO CART</button>    
+                  <h3>Color: {product.variants[0].colour}</h3>
+                  {/* <p>Description: {product.description}</p> */}
+                  <button onClick={() => handleClick(product)}>ADD TO CART</button>    
+                  {/* <button onClick={() => {localStorage.setItem(product);
+}}>Add to Local Storage</button> */}
                 </div>   
              </div>  
             );

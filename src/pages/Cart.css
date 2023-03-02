@@ -1,0 +1,22 @@
+
+
+
+.cart{
+    border: 1px solid pink;
+    width: 20%;
+}
+
+.cartLink{
+    color:black;
+    border: 1px solid purple;
+    width: 10%;
+    height: auto;
+}
+
+.cartClothingCard{
+ border: 1px solid red;
+}
+
+.cartClothingDetails{
+    border: 1px solid green;
+}
