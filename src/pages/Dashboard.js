@@ -4,10 +4,10 @@ import ClothingTypeCard from "../components/ClothingTypeCard";
 import Search from "../components/Search";
 import SearchDisplay from "../components/SearchDisplay";
 import { Link } from "react-router-dom";
-import Dresses from "./Dresses";
-import Pants from "./Pants";
-import Shoes from "./Shoes";
-import Tops from "./Tops";
+import Dresses from "./shopping/Dresses";
+import Pants from "./shopping/Pants";
+import Shoes from "./shopping/Shoes";
+import Tops from "./shopping/Tops";
 import Carousel from "../components/Carousel";
 
 

@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
-import { useLocation, useNavigate, useParams } from "react-router-dom";
+import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
 import { getClothes } from "../services/asos-api";
 import './ProductDetails.css'
+import { useDispatch } from "react-redux";
+import { addCart } from "../redux/cartSlice";
 
 export default function ProductDetails(){
     let location = useLocation()
@@ -10,10 +12,14 @@ export default function ProductDetails(){
     let navigate = useNavigate()      
     function goBack(){
         navigate(-1)
-    }
+    } 
+
+    // const dispatch = useDispatch();
+    // const addProduct = (product) => {
+    //   dispatch(addCart(product));
+    // };
 
     let [item, setItem] = useState("");
-
     let getData = async () => {
         let itemData = await getClothes(productId);
         console.log(itemData);
@@ -28,7 +34,8 @@ export default function ProductDetails(){
                   <h2>Brand: {item.brandName}</h2>
                   <h3>Price: {item.price.current.text}</h3>
                   <h3>Color: {item.colour}</h3>
-                  <button>ADD TO CART</button>    
+                  {/* <button className="addCartButton" onClick={() => addProduct(item)}>ADD TO CART</button>    
+                  <button><Link to="/cart" className="">Go to cart</Link></button> */}
                 </div>   
              </div>  
             );

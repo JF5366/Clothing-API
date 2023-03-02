@@ -23,7 +23,7 @@ const [scrolled,setScrolled]=React.useState(false);
       const handleScroll=() => {
         console.log(handleScroll)
           const offset=window.scrollY;
-          if(offset > 100 ){
+          if(offset > 80 ){
             setScrolled(true);
           }
           else{
@@ -60,7 +60,9 @@ const [scrolled,setScrolled]=React.useState(false);
                           <li className='nav-items'>
                               <Link to="/about" className='nav-links'> About </Link>
                           </li>
-  
+                          <li className='nav-items'>
+                              <Link to="/cart" className='nav-links'> Cart </Link>
+                          </li>
                       </ul>
              </header>
         </div>

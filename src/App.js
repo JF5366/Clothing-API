@@ -4,20 +4,21 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Main from './pages/Main';
 import About from "./pages/About";
-import Nav from "./components/Navbar";
 import { Navigate, Route, Routes } from "react-router-dom";
-import Dresses from "./pages/Dresses";
-import Pants from "./pages/Pants";
-import Shoes from "./pages/Shoes";
-import Tops from "./pages/Tops";
+import Dresses from "./pages/shopping/Dresses";
+import Pants from "./pages/shopping/Pants";
+import Shoes from "./pages/shopping/Shoes";
+import Tops from "./pages/shopping/Tops";
 import Navbar from "./components/Navbar";
 import ProductDetails from "./components/ProductDetails";
 import { useState } from "react";
-import Swim from "./pages/Swim";
-import Accessories from "./pages/Accessories";
-import Activewear from "./pages/Activewear";
-import Coats from "./pages/Coats";
-import Lounge from "./pages/Lounge";
+import Swim from "./pages/shopping/Swim";
+import Accessories from "./pages/shopping/Accessories";
+import Activewear from "./pages/shopping/Activewear";
+import Coats from "./pages/shopping/Coats";
+import Lounge from "./pages/shopping/Lounge";
+import Cart from "./pages/Cart";
+
 
 export default function App() {
   // let [clothes, setClothes] = useState([]);
@@ -41,7 +42,7 @@ export default function App() {
         <Route  path="/lounge" element ={<Lounge />}/>
         <Route  path="/accessories" element ={<Accessories />}/>
         <Route path="/products/:productId" element ={<ProductDetails />}/>
-       
+        {/* <Route path="/cart" component={<Cart />} />  */}
         <Route path='*' element={<Navigate to="/" />} />
 
        

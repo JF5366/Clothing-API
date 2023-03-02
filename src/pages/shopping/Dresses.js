@@ -1,8 +1,8 @@
-import { getClothes } from "../services/asos-api";
+import { getClothes } from "../../services/asos-api";
 import { Link, Outlet, useNavigate, useParams } from "react-router-dom";
-import ClothingTypeCard from "../components/ClothingTypeCard";
+import ClothingTypeCard from "../../components/ClothingTypeCard";
 import { useEffect, useState } from "react";
-import ProductDetails from "../components/ProductDetails";
+import ProductDetails from "../../components/ProductDetails";
 //import { getEtsy } from "../services/etsy-api";
 
 
