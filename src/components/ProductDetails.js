@@ -1,41 +1,49 @@
 import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
+import { addCart } from "../context/action";
 import { getClothes } from "../services/asos-api";
 import './ProductDetails.css'
 
 export default function ProductDetails(){
     let location = useLocation()
-    console.log(location)
-    let {productId} = useParams() 
+    let {id} = useParams()
+
+    const dispatch = useDispatch();
+    const addProduct = (product) => {
+      dispatch(addCart(product));
+      console.log(product)
+    };
+
     let navigate = useNavigate()      
     function goBack(){
         navigate(-1)
     }
 
-    let [item, setItem] = useState("");
+    let [product, setProduct] = useState([]);
 
     let getData = async () => {
-        let itemData = await getClothes(productId);
-        console.log(itemData);
+        let productData = await getClothes(id);
+        console.log(productData);
         
-        let itemComponents = itemData.products.map((item) => {
-            let imgUrl = "https://" + item.imageUrl;
+        let productComponents = productData.products.map((product) => {
+            let imgUrl = "https://" + product.imageUrl;
             return (
-              <div key={item.id} className="itemInfo">
+              <div key={product.id} className="productInfo">
                 <img src={imgUrl} alt="" />
-                <div className="itemText">
-                  <h1> {item.name} </h1>
-                  <h2>Brand: {item.brandName}</h2>
-                  <h3>Price: {item.price.current.text}</h3>
-                  <h3>Color: {item.colour}</h3>
-                  <button>ADD TO CART</button>    
+                <div className="productText">
+                  <h1> {product.name} </h1>
+                  <h2>Brand: {product.brandName}</h2>
+                  <h3>Price: {product.price.current.text}</h3>
+                  <h3>Color: {product.colour}</h3>
+                  <button onClick={() => addProduct(product)}>ADD TO CART</button>    
                 </div>   
              </div>  
             );
           });
         
-      setItem(itemComponents);
-      console.log(itemComponents)
+      setProduct(productComponents);
+      console.log(productComponents)
     };
         //  useEffect(() => {
         //    getData();
@@ -44,14 +52,14 @@ export default function ProductDetails(){
       return(
          <div>
            <div >
-              {  (location.pathname === `/products/${productId}`) && (
+              {  (location.pathname === `/products/${id}`) && (
               <div className="buttons">
                 <button onClick={goBack}>Back</button>
-                <button onClick={getData}>Call Item API</button>
+                <button onClick={getData}>Call Product API</button>
               </div>
               )}      
             </div>
-            <div className="clothingItem">{item}</div> 
+            <div className="clothingProduct">{product}</div> 
 
            
 

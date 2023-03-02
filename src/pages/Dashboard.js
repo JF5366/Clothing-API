@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import { getClothes } from "../services/asos-api";
 import ClothingTypeCard from "../components/ClothingTypeCard";
-import Search from "../components/Search";
-import SearchDisplay from "../components/SearchDisplay";
+// import Search from "../components/Search";
+// import SearchDisplay from "../components/SearchDisplay";
 import { Link } from "react-router-dom";
-import Dresses from "./Dresses";
-import Pants from "./Pants";
-import Shoes from "./Shoes";
-import Tops from "./Tops";
+import Dresses from "./categories/Dresses";
+import Pants from "./categories/Pants";
+import Shoes from "./categories/Shoes";
+import Tops from "./categories/Tops";
 import Carousel from "../components/Carousel";
 
 
@@ -60,11 +60,7 @@ export default function Main() {
                 <span className='subtitle'>SHOP NOW</span></div> </Link>
              </div>
 
-        <div className="search">
-            {/* <h1>Search for clothes</h1>
-            <Search getClothes={getClothes} />
-            <SearchDisplay clothes={clothes} /> */}
-         </div>
+  
       </div>
     );
   }

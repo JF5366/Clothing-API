@@ -1,25 +1,25 @@
-import { getClothes } from "../services/asos-api";
+import { getClothes } from "../../services/asos-api";
 import { Link, Outlet, useNavigate, useParams } from "react-router-dom";
-import ClothingTypeCard from "../components/ClothingTypeCard";
+import ClothingTypeCard from "../../components/ClothingTypeCard";
 import { useEffect, useState } from "react";
-import ProductDetails from "../components/ProductDetails";
+import ProductDetails from "../../components/ProductDetails";
 //import { getEtsy } from "../services/etsy-api";
 
 
-export default function Accessories(){
+export default function Lounge(){
   // let params = useParams(); 
     let navigate = useNavigate() 
     function goBack(){
         navigate(-1)
     }
     
-    let [accessories, setAccessories] = useState([]);
+    let [lounge, setLounge] = useState([]);
   
     let getData = async () => {
-      let allAccessories = await getClothes("accessories");
-      console.log(allAccessories);
+      let allLounge = await getClothes("womens lounge");
+      console.log(allLounge);
   
-      let accessoriesComponents = allAccessories.products.map(item => {
+      let loungeComponents = allLounge.products.map(item => {
         let imgUrl = "https://" + item.imageUrl;
         return (
           <div key={item.id}>
@@ -34,7 +34,7 @@ export default function Accessories(){
         );
       });
   
-      setAccessories(accessoriesComponents);
+      setLounge(loungeComponents);
     };
   
     // useEffect(() => {
@@ -42,14 +42,14 @@ export default function Accessories(){
     // }, []);
 
     return(
-        <div className="accessories">
-            <div className="buttons">
-              <button className="back" onClick={goBack}>Back</button>
-              <button onClick={getData}>Call Tops API</button>
-            </div>
-            <h1>Accessories</h1>
+        <div className="lounge">
+              <div className="buttons">
+               <button className="back" onClick={goBack}>Back</button>
+               <button onClick={getData}>Call Tops API</button>
+              </div>
+            <h1>Lounge</h1>
             <div className="imageCards"> 
-                {accessories} 
+                {lounge} 
                 </div>
         </div>
     )

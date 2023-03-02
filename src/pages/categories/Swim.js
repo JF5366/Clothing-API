@@ -1,25 +1,25 @@
-import { getClothes } from "../services/asos-api";
+import { getClothes } from "../../services/asos-api";
 import { Link, Outlet, useNavigate, useParams } from "react-router-dom";
-import ClothingTypeCard from "../components/ClothingTypeCard";
+import ClothingTypeCard from "../../components/ClothingTypeCard";
 import { useEffect, useState } from "react";
-import ProductDetails from "../components/ProductDetails";
+import ProductDetails from "../../components/ProductDetails";
 //import { getEtsy } from "../services/etsy-api";
 
 
-export default function Lounge(){
+export default function Swim(){
   // let params = useParams(); 
     let navigate = useNavigate() 
     function goBack(){
         navigate(-1)
     }
     
-    let [lounge, setLounge] = useState([]);
+    let [swim, setSwim] = useState([]);
   
     let getData = async () => {
-      let allLounge = await getClothes("womens lounge");
-      console.log(allLounge);
+      let allSwim = await getClothes("swim");
+      console.log(allSwim);
   
-      let loungeComponents = allLounge.products.map(item => {
+      let swimComponents = allSwim.products.map(item => {
         let imgUrl = "https://" + item.imageUrl;
         return (
           <div key={item.id}>
@@ -34,7 +34,7 @@ export default function Lounge(){
         );
       });
   
-      setLounge(loungeComponents);
+      setSwim(swimComponents);
     };
   
     // useEffect(() => {
@@ -42,14 +42,14 @@ export default function Lounge(){
     // }, []);
 
     return(
-        <div className="lounge">
+        <div className="swim">
               <div className="buttons">
-               <button className="back" onClick={goBack}>Back</button>
-               <button onClick={getData}>Call Tops API</button>
-              </div>
-            <h1>Lounge</h1>
+                  <button className="back" onClick={goBack}>Back</button>
+                 <button onClick={getData}>Call Tops API</button>
+             </div>
+            <h1>Swimwear</h1>
             <div className="imageCards"> 
-                {lounge} 
+                {swim} 
                 </div>
         </div>
     )

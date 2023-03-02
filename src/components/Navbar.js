@@ -50,7 +50,9 @@ const [scrolled,setScrolled]=React.useState(false);
                           <li className='nav-items '>
                               <Link to="/" className='nav-links'> Home </Link>
                           </li>
-  
+                          <li className='nav-items'>
+                              <Link to="/search" className='nav-links'> Search </Link>
+                          </li>
                           <li className='nav-items' onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} >
                               <Link className='nav-links'> Shop 
                                   {dropdown && <DropDown />}
@@ -60,7 +62,9 @@ const [scrolled,setScrolled]=React.useState(false);
                           <li className='nav-items'>
                               <Link to="/about" className='nav-links'> About </Link>
                           </li>
-  
+                          <li className='nav-items'>
+                              <Link to="/cart" className='nav-links'> Cart </Link>
+                          </li>
                       </ul>
              </header>
         </div>

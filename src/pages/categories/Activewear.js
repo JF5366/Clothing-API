@@ -1,40 +1,38 @@
-import { getClothes } from "../services/asos-api";
+import { getClothes } from "../../services/asos-api";
 import { Link, Outlet, useNavigate, useParams } from "react-router-dom";
-import ClothingTypeCard from "../components/ClothingTypeCard";
+import ClothingTypeCard from "../../components/ClothingTypeCard";
 import { useEffect, useState } from "react";
-import ProductDetails from "../components/ProductDetails";
+import ProductDetails from "../../components/ProductDetails";
 //import { getEtsy } from "../services/etsy-api";
 
 
-export default function Swim(){
+export default function Activewear(){
   // let params = useParams(); 
     let navigate = useNavigate() 
     function goBack(){
         navigate(-1)
     }
     
-    let [swim, setSwim] = useState([]);
+    let [activewear, setActivewear] = useState([]);
   
     let getData = async () => {
-      let allSwim = await getClothes("swim");
-      console.log(allSwim);
+      let allActivewear = await getClothes("womens gym");
+      console.log(allActivewear);
   
-      let swimComponents = allSwim.products.map(item => {
+      let activewearComponents = allActivewear.products.map(item => {
         let imgUrl = "https://" + item.imageUrl;
         return (
           <div key={item.id}>
                 <Link to={`/products/${item.id}`}>
                     <ClothingTypeCard name={item.name} key={item.id} id={item.id} imgsrc={imgUrl} clothingItem={{item}}/>
                     <ProductDetails id={item.id}>Product details</ProductDetails>
-            
-                  </Link>
-
+                    </Link>
           </div>
           
         );
       });
   
-      setSwim(swimComponents);
+      setActivewear(activewearComponents);
     };
   
     // useEffect(() => {
@@ -42,15 +40,15 @@ export default function Swim(){
     // }, []);
 
     return(
-        <div className="swim">
+        <div className="activewear">
               <div className="buttons">
-                  <button className="back" onClick={goBack}>Back</button>
-                 <button onClick={getData}>Call Tops API</button>
-             </div>
-            <h1>Swimwear</h1>
+              <button className="back" onClick={goBack}>Back</button>
+              <button onClick={getData}>Call Activewear API</button>
+            </div>
+            <h1>Activewear</h1>
             <div className="imageCards"> 
-                {swim} 
-                </div>
+                {activewear} 
+            </div>
         </div>
     )
 }

@@ -6,23 +6,27 @@ import Main from './pages/Main';
 import About from "./pages/About";
 import Nav from "./components/Navbar";
 import { Navigate, Route, Routes } from "react-router-dom";
-import Dresses from "./pages/Dresses";
-import Pants from "./pages/Pants";
-import Shoes from "./pages/Shoes";
-import Tops from "./pages/Tops";
+import Dresses from "./pages/categories/Dresses";
+import Pants from "./pages/categories/Pants";
+import Shoes from "./pages/categories/Shoes";
+import Tops from "./pages/categories/Tops";
 import Navbar from "./components/Navbar";
 import ProductDetails from "./components/ProductDetails";
 import { useState } from "react";
-import Swim from "./pages/Swim";
-import Accessories from "./pages/Accessories";
-import Activewear from "./pages/Activewear";
-import Coats from "./pages/Coats";
-import Lounge from "./pages/Lounge";
+import Swim from "./pages/categories/Swim";
+import Accessories from "./pages/categories/Accessories";
+import Activewear from "./pages/categories/Activewear";
+import Coats from "./pages/categories/Coats";
+import Lounge from "./pages/categories/Lounge";
+import Cart from "./pages/Cart";
+import CartContext from './context/CartContext';
+import SearchPage from "./pages/SearchPage";
 
 export default function App() {
-  // let [clothes, setClothes] = useState([]);
-  
-  
+
+
+
+
   return (
     <div className="App">
       <Header />
@@ -31,7 +35,6 @@ export default function App() {
         <Route  path="/" element ={<Main />}/>
         <Route  path="/about" element ={<About />}/>
         <Route  path="/dresses" element ={<Dresses />} />
-       
         <Route  path="/pants" element ={<Pants />}/>
         <Route  path="/shoes" element ={<Shoes />}/>
         <Route  path="/tops" element ={<Tops />}/> 
@@ -40,8 +43,9 @@ export default function App() {
         <Route  path="/coats" element ={<Coats />}/>
         <Route  path="/lounge" element ={<Lounge />}/>
         <Route  path="/accessories" element ={<Accessories />}/>
-        <Route path="/products/:productId" element ={<ProductDetails />}/>
-       
+        <Route path="/products/:id" element ={<ProductDetails />}/>
+        <Route  path="/cart" element ={<Cart />}/>
+        <Route  path="/search" element ={<SearchPage />}/>
         <Route path='*' element={<Navigate to="/" />} />
 
        
