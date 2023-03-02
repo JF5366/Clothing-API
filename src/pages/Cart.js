@@ -2,7 +2,7 @@ import { CartContext } from "../App";
 import { useContext } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { addCart, delCart } from "../context/action";
+import { addCart, delCart } from "../store/action";
 
 
 const Cart = () => {

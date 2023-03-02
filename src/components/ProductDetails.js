@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
-import { addCart } from "../context/action";
+import { addCart } from "../store/action";
 import { getClothes } from "../services/asos-api";
 import './ProductDetails.css'
 

@@ -1,5 +1,6 @@
 
 export const addCart = (product) => {
+  console.log('hi')
     return {
       type: "ADD",
       payload: product
