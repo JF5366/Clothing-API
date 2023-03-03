@@ -41,27 +41,95 @@ const Cart = () => {
        dispatch(setCart(product))
       }
     }, []);
-
-    return(
-    state.map(cartItem => {
-      let imgUrl = "https://" + cartItem.imageUrl;
-      return (
-        <div key={cartItem.id} className="cart">
-              <div className="buttons">
-                 <button className="back" onClick={goBack}>Back</button>
-              </div>
-            <Link to={`/products/${cartItem.id}`} className="cartLink">
-              <ClothingTypeCard className="cartClothingCard" name={cartItem.name} key={cartItem.id} id={cartItem.id} imgsrc={imgUrl} clothingItem={{cartItem}}/>
-              <ProductDetails className="cartClothingDetails" id={cartItem.id}>Product details</ProductDetails>
-            </Link>
-
-
-        </div>
-       );
-      })
   
-    )
+   const emptyCart = () => {
+    return (
+      <div className="emptyCart">
+            <h1>Cart is Empty</h1>
+      </div>
+    );
+  };
+  const cartItems = (product) => {
+    return (
+      <>
+            <div className="cartData">
+              <div className="cartImg">
+                <img
+                  src={"https://" + product.media.images[0].url}
+                  alt={product.name}
+                  height="200px"
+                  width="180px"
+                />
+              </div>
+               <div className="cartInfo">
+                <h3>{product.name}</h3>
+                <p className="cartQuantity">
+                  {/* {product.qty} X ${product.price} = $
+                  {product.qty * product.price} */}
+                  ${product.price.current.text} 
+                </p>
+                {/* <button
+                  className="delBtn"
+                  onClick={() => handleDel(product)}
+                >-</button>
+                <button
+                  className="addBtn"
+                  onClick={() => handleAdd(product)}
+                >+</button>  */}
+              </div>
+            </div>
+      </>
+    );
+  };
+  const buttons = () => {
+    return (
+      <>
+          <div className="checkoutLink">
+            <Link
+              to="/checkout"
+              className="checkoutBtn"
+            >Proceed to Checkout</Link>
+          </div>
+      </>
+    );
+  };
 
+
+  return (
+    <div>
+      {state.length === 0 && emptyCart()}
+      {state.length !== 0 && state.map(cartItems)}
+      {state.length !== 0 && buttons()}
+    </div>
+  );
+};
+
+
+
+  //   return(
+  //   state.map(cartItem => {
+  //     let imgUrl = "https://" + cartItem.imageUrl;
+  //     return (
+  //       <div key={cartItem.id} className="cart">
+  //             <div className="buttons">
+  //                <button className="back" onClick={goBack}>Back</button>
+  //             </div>
+  //           <Link to={`/products/${cartItem.id}`} className="cartLink">
+  //             <ClothingTypeCard className="cartClothingCard" name={cartItem.name} key={cartItem.id} id={cartItem.id} imgsrc={imgUrl} clothingItem={{cartItem}}/>
+  //             <ProductDetails className="cartClothingDetails" id={cartItem.id}>Product details</ProductDetails>
+  //           </Link>
+
+
+  //       </div>
+  //      );
+  //     })
+  
+  //   )
+  // };
+  
+  export default Cart;
+
+//////////////////////////////////////////////////////////
     // return (
     //   <div>
     //     <p>Coming Soon....</p>
@@ -76,9 +144,7 @@ const Cart = () => {
     //      </div>
     //     </div>
     // );
-  };
-  
-  export default Cart;
+ 
   
 
 
@@ -163,4 +229,56 @@ const Cart = () => {
 //   {/* {state !== 0 && state.map(cartItems)}
 //   {state !== 0 && buttons()} */}
 // </div>
+// )
+
+
+
+/////////////////////////////////////////////
+///////////////////////////////////////////////////////
+// const state = useSelector((state) => state.cart);
+// const dispatch = useDispatch();
+
+// useEffect(() => {
+//   console.log('this is our cart')
+//   console.log(state)
+// }, [])
+
+// useEffect(() => {
+//   const product = JSON.parse(localStorage.getItem('product'));
+//   console.log(product)
+//   if (product) {
+//   //  setState(product); 
+//    dispatch(setCart(product))
+//   }
+// }, []);
+
+// let getCart = () => {
+// let cartComponents = state.map((cartItem, index) => {
+//   let imgUrl = "https://" + cartItem.imageUrl;
+//   return(
+//     <div key={cartItem.id} className="cart">
+//       <Link to={`/products/${cartItem.id}`} className="cartLink">
+//         <ClothingTypeCard className="cartClothingCard" name={cartItem.name} key={cartItem.id} id={cartItem.id} imgsrc={imgUrl} clothingItem={{cartItem}}/>
+//         <ProductDetails className="cartClothingDetails" id={cartItem.id}>Product details</ProductDetails>
+//         <button>Delete Item</button>
+//       </Link>
+//     </div>
+//   );
+  
+// });
+// setCart(cartComponents)
+// console.log(cartComponents)
+// };
+//     useEffect(() => {
+//           getCart();
+//         }, []);
+//   return (
+//     <div>
+//       <div className="buttons">
+//         <button className="back" onClick={goBack}>Back</button>
+//       </div>
+//       <div className="cartItems">
+
+//       </div>
+//     </div>
 // )
