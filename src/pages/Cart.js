@@ -5,7 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import ClothingTypeCard from "../components/ClothingTypeCard";
 import ProductDetails from "../components/ProductDetails";
 import './Cart.css'
-import { addToCart, setCart } from "../store/CartSlice";
+import { addToCart, setCart, clearCart, deleteFromCart } from "../redux/CartSlice";
 
 
 const Cart = () => {
@@ -27,10 +27,12 @@ const Cart = () => {
 ///////////////////////////////////////////////////////
     const state = useSelector((state) => state.cart);
     const dispatch = useDispatch();
+
   
+    
     useEffect(() => {
-      console.log('this is our cart')
-      console.log(state)
+      // console.log('this is our cart')
+      // console.log(state)
     }, [])
 
     useEffect(() => {
@@ -41,7 +43,24 @@ const Cart = () => {
        dispatch(setCart(product))
       }
     }, []);
+
+    function handleClick(product){
+      dispatch(deleteFromCart(product))
+
+      localStorage.removeItem('product');
+    }
   
+    const cartHeader = () => {
+      return (
+        <>
+            <div className="cartHeader">
+                <h1>Cart Items</h1>
+            </div>
+        </>
+      );
+    };
+
+
    const emptyCart = () => {
     return (
       <div className="emptyCart">
@@ -50,24 +69,32 @@ const Cart = () => {
     );
   };
   const cartItems = (product) => {
+    
     return (
       <>
             <div className="cartData">
+              <div className="deleteItem">
+                <button onClick={() => handleClick(product)}>Delete Item</button>
+              </div>
               <div className="cartImg">
                 <img
                   src={"https://" + product.media.images[0].url}
                   alt={product.name}
-                  height="200px"
-                  width="180px"
                 />
               </div>
                <div className="cartInfo">
                 <h3>{product.name}</h3>
-                <p className="cartQuantity">
-                  {/* {product.qty} X ${product.price} = $
-                  {product.qty * product.price} */}
-                  ${product.price.current.text} 
-                </p>
+                </div>
+                {/* <div className="cartQuantity">
+                  <p>Quantity: {product.quantity}</p>
+                  {console.log(product.quantity)}
+                </div> */}
+                <div className="cartPrice">
+                  <p>
+                    {/* {product.qty} X ${product.price} = $
+                    {product.qty * product.price} */}
+                    {product.price.current.text} 
+                  </p>
                 {/* <button
                   className="delBtn"
                   onClick={() => handleDel(product)}
@@ -77,18 +104,28 @@ const Cart = () => {
                   onClick={() => handleAdd(product)}
                 >+</button>  */}
               </div>
+              
             </div>
       </>
     );
   };
-  const buttons = () => {
+  const checkout = () => {
+
+    const cartTotal = state.reduce((a, c) => a + c.price.current.value, 0);
+   
+
+
     return (
       <>
           <div className="checkoutLink">
+              <div className="cartTotal">
+                Total: ${cartTotal}
+              </div>
             <Link
               to="/checkout"
               className="checkoutBtn"
-            >Proceed to Checkout</Link>
+            ><button>Proceed to Checkout</button></Link>
+            <button onClick={() => {dispatch(clearCart())}}>Empty Cart</button>
           </div>
       </>
     );
@@ -96,10 +133,11 @@ const Cart = () => {
 
 
   return (
-    <div>
+    <div className="cart">
+      {cartHeader()}
       {state.length === 0 && emptyCart()}
       {state.length !== 0 && state.map(cartItems)}
-      {state.length !== 0 && buttons()}
+      {state.length !== 0 && checkout()}
     </div>
   );
 };

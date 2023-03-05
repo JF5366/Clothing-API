@@ -51,13 +51,13 @@ export default function SearchPage (){
     // }, []);
 
     return(
-        <div className="activewear">
+        <div className="">
              <div className="buttons">
                 <button className="back" onClick={goBack}>Back</button>
                 <button onClick={getData}>Call Search API</button>
               </div>
             <div className="search">
-                <h1>Find Your New Style</h1>
+                <h1 className="searchTitle">Find Your New Style</h1>
                 <form onSubmit={handleSubmit} className="searchBox">
                    <input value={input} onChange={handleChange} />
                    <button>Search</button>

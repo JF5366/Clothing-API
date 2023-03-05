@@ -265,36 +265,24 @@ code {
   width: 1.5em;
 }
 
-/* //////////////Cart//////////////// */
+/* //////////////Search//////////////// */
 
-.emptyCart{
-
-  height: 500px;
-  width: 500px;
-  border: 5px solid red; 
- 
- }
- .fullCart{
- 
-   height: 500px;
-   width: 500px;
-   border: 5px solid red; 
-  
-  }
-
-
-
-
-
-
-/* .search{
-  border: 1px solid orange;
+.searchTitle{
+  font-size: 2em;
 }
-.searchCard{
-  border: 1px solid green;
-} */
+.searchBox{
+  margin: 1em;
+}
+
+/* //////////////About//////////////// */
 
 
-
+.aboutTitle{
+  font-size: 2em;
+}
+.aboutText{
+  margin: 2em 10em;
+  font-size: 1.5em;
+}
 
 

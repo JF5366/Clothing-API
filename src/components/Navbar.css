@@ -18,6 +18,20 @@
 
 }
 
+.left{
+  position: absolute;
+  left: 10px;
+}
+.two{
+  left: 3em;
+}
+.faHome{
+  top: 5px;
+}
+.react-icons {
+  color: black;
+
+}
 .scrolled{
   position: fixed;
   top: 0;

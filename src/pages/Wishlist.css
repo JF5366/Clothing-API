@@ -1,7 +1,7 @@
 
 
 
-.cart{
+.wishlist{
     /* border: 11px solid pink; */
     width: auto;
     
@@ -9,45 +9,45 @@
     margin: auto 10% auto 10%;
 }
 
-.cartImg{
+.wishlistImg{
     /* color:black;
     border: 11px solid purple;
     width: 10%;
     height: auto; */
     margin: 1em 5em 1em 11em;
 }
-.cartImg img{
+.wishlistImg img{
     border: 1px solid purple;
     height: 50px;
     width: auto;
     
 }
 
-.cartClothingCard{
+.wishlistClothingCard{
  border: 1px solid red;
 }
 
-.cartClothingDetails{
+.wishlistClothingDetails{
     border: 1px solid green;
 }
-.cartData{
+.wishlistData{
     display: flex;
     align-items: center;
     margin: 0;
     width: 100%;
     border-bottom: 1px solid black;
 }
-.cartInfo{
+.wishlistInfo{
     width: 100%;
 }
-.cartPrice{
+.wishlistPrice{
     font-size: 1.5em;
     width: 100%;
     margin: 0 0 0 2em;
     padding: 0;
     display: flex;
 }
-.cartPrice p{
+.wishlistPrice p{
     justify-content: flex-end;
     display: flex;
     margin-right: 0;
@@ -55,28 +55,28 @@
     /* position: relative;
     right: -30%; */
 }
-.cartTotal{
+.wishlistTotal{
     /* border: 1px solid green; */
     padding: .5em;
 }
 .checkoutBtn{
     display: flex;
-    margin: auto;
+    /* margin: auto; */
     justify-content: center;
     /* transform: translate(25%, 0%);  */
     position: relative;
     text-decoration: none;
-    margin-bottom: 20px;
+    margin: 20px auto;
 }
 .checkoutBtn button{
     padding: 3px;
 }
-.cartTotal{
+.wishlistTotal{
     font-size: 2em;
     /* transform: translate(5%, 0%);  */
      position: relative;
 }
-.cartHeader h1{
+.wishlistHeader h1{
     font-size: 2.5em;
     text-decoration: underline;
     color: rgb(43, 43, 43);
@@ -88,11 +88,11 @@
 }
 
 
-.cartQuantity{
+.wishlistQuantity{
     border: 1px solid red; 
     width: 100px;
     hieght: 100px;
 }
-.cartData div{
+.wishlistData div{
    /* // border: 1px solid red;  */
 }

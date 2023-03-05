@@ -61,7 +61,7 @@ export default function Dresses(){
         <div className="dresses">
               <div className="buttons">
                 <button className="back" onClick={goBack}>Back</button>
-                <button onClick={getData}>Call Tops API</button>
+                <button onClick={getData}>Call Dresses API</button>
               </div>
             <h1>Dresses</h1>
             <div className="imageCards"> 

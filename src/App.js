@@ -21,6 +21,7 @@ import Lounge from "./pages/categories/Lounge";
 import Cart from "./pages/Cart";
 // import CartContext from './store/CartSlice';
 import SearchPage from "./pages/SearchPage";
+import Wishlist from "./pages/Wishlist";
 
 export default function App() {
 
@@ -45,6 +46,7 @@ export default function App() {
         <Route  path="/accessories" element ={<Accessories />}/>
         <Route path="/products/:id" element ={<ProductDetails />}/>
         <Route  path="/cart" element ={<Cart />}/>
+        <Route  path="/wishlist" element ={<Wishlist />}/>
         <Route  path="/search" element ={<SearchPage />}/>
         <Route path='*' element={<Navigate to="/" />} />
 

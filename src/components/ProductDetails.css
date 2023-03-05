@@ -3,8 +3,11 @@
     position: absolute;
     margin-bottom: 3em;
 }
-.clothingItem{
-   
+.itemButton{  
+   display: flex;
+   flex-direction: column;
+   width: 9em;
+   margin: auto;
 }
 
 /* 204712578 */

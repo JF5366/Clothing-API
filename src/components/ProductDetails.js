@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
-import { addCart } from "../store/action";
 import { getClothes } from "../services/asos-api";
 import './ProductDetails.css'
-import { addToCart } from "../store/CartSlice";
+import { addToCart } from "../redux/CartSlice";
 import { getClothesDetails } from "../services/asosapiDetails";
+import { addToWishlist } from "../redux/WishlistSlice";
 
 export default function ProductDetails(){
     let location = useLocation()
@@ -18,11 +18,19 @@ export default function ProductDetails(){
 ///////////////////localStorage///////////////////
      const [cartStorage, setCartStorage] = useState([]);
       const cart = useSelector(state => state.cart)
+      const wishlist = useSelector(state => state.wishlist)
+      
       function handleClick(product){
         dispatch(addToCart(product))
-  
-      localStorage.setItem('product', JSON.stringify([product, ...cart]));
-        console.log(product)
+
+        localStorage.setItem('product', JSON.stringify([product, ...cart]));
+        console.log(cart)
+      }
+      function handleWishClick(product){
+        dispatch(addToWishlist(product))
+
+        localStorage.setItem('wishlist', JSON.stringify([product, ...wishlist]));
+        console.log(wishlist)
       }
       //////////////////////////////////////////////////////
       
@@ -47,9 +55,10 @@ export default function ProductDetails(){
                   <h3>Price: {product.price.current.text}</h3>
                   <h3>Color: {product.variants[0].colour}</h3>
                   {/* <p>Description: {product.description}</p> */}
-                  <button onClick={() => handleClick(product)}>ADD TO CART</button>    
-                  {/* <button onClick={() => {localStorage.setItem(product);
-}}>Add to Local Storage</button> */}
+                  <div className="itemButton">
+                    <button onClick={() => handleClick(product)}>Add to Cart</button>    
+                    <button onClick={() => handleWishClick(product)}>Add to Wishlist</button>
+                  </div>
                 </div>   
              </div>  
             );
