@@ -6,6 +6,8 @@ import './ProductDetails.css'
 import { addToCart } from "../redux/CartSlice";
 import { getClothesDetails } from "../services/asosapiDetails";
 import { addToWishlist } from "../redux/WishlistSlice";
+import { FaBoxOpen, FaRegHeart, FaTruck } from "react-icons/fa";
+
 
 export default function ProductDetails(){
     let location = useLocation()
@@ -46,18 +48,34 @@ export default function ProductDetails(){
         
         let productComponents = productArray.map((product) => {
             let imgUrl = "https://" + product.media.images[0].url;
+            let description = product.description
+            let inStock = (product.isInStock === true ? "In Stock" : "Out of Stock")
+            let color = product.variants[0].colour.toLowerCase()
+            console.log(inStock)
             return (
               <div key={product.id} className="productInfo">
+            
                 <img src={imgUrl} alt="" />
                 <div className="productText">
                   <h1> {product.name} </h1>
                   <h2>Brand: {product.brand.name}</h2>
+                  <h3>Color: {color}</h3>
+                  {/* <div dangerouslySetInnerHTML={{__html: description}}/> */}
+                  <h4>Status: {inStock}</h4>
                   <h3>Price: {product.price.current.text}</h3>
-                  <h3>Color: {product.variants[0].colour}</h3>
-                  {/* <p>Description: {product.description}</p> */}
                   <div className="itemButton">
-                    <button onClick={() => handleClick(product)}>Add to Cart</button>    
-                    <button onClick={() => handleWishClick(product)}>Add to Wishlist</button>
+                    <button onClick={() => handleClick(product)} className="button addCart">Add to Cart</button>    
+                    <button onClick={() => handleWishClick(product)} className="button addWish">
+                      <FaRegHeart />
+                    </button>
+                  </div>
+                  <div className="freeDelivery">
+                    <FaTruck />
+                    <p>Free Delivery</p>
+                  </div>
+                  <div className="freeReturns">
+                    <FaBoxOpen />
+                    <p>Free Returns</p>
                   </div>
                 </div>   
              </div>  

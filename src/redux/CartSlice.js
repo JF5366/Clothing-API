@@ -13,6 +13,9 @@ const cartSlice = createSlice({
     name: "cart",
     initialState,
     reducers: {
+        setCart: (state, {payload}) => {
+            return payload;
+        },
         addToCart: (state, action) => {  
             const { payload } = action;
             state.push(payload)
@@ -33,9 +36,7 @@ const cartSlice = createSlice({
                 
            // } 
        
-        setCart: (state, {payload}) => {
-            return payload;
-        },
+        
         deleteFromCart: (state, {payload}) => {   
             const { id } = payload;
             console.log({payload})

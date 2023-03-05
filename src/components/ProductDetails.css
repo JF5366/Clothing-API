@@ -5,9 +5,10 @@
 }
 .itemButton{  
    display: flex;
-   flex-direction: column;
-   width: 9em;
-   margin: auto;
+
+   /* flex-direction: column; */
+   width: 12em;
+   margin: .7em 0 0 6em;
 }
 
 /* 204712578 */
@@ -50,7 +51,7 @@
     display: flex;
 }
 .productInfo  img{
-    width: 30%;
+    width: auto;
     height: auto;
     margin: 1em 0em 2em 10em;
     border: 1px solid rgb(167, 132, 132);
@@ -59,16 +60,16 @@
 }
 .productText{
     width: 40%;
-    margin: 4em 1em 1em 3em;
+    margin: .5em 1em 1em 1.5em;
 }
 .productText h1{
-    margin: 1em 1em 1em 1em;
+    margin: .5em .5em .5em 0em;
     text-shadow: 1px 1px 2px rgb(170, 170, 170);
     font-size: 2em;
 }
 
 .productText h2{
-    margin: 1em 1em 1em 1em;
+    margin: 0em 1em .4em 1em;
 }
 .productText h3{
     margin: .5em 1em .5em 1em;
@@ -77,8 +78,27 @@
 
 .productText button{
     margin: .5em 1em .5em 1em;
-    padding: .1em;
+    padding: .3em .4em .2em .4em;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+.addCart:hover{
+  background-color: rgb(190, 190, 190);
+  color: whitesmoke;
+  border-color:  rgb(190, 190, 190);
+  border-radius: 5px;
+  box-shadow: none;
+}
+.addWish:hover{
+    color:red;
+}
+.freeDelivery, .freeReturns{
+    display: flex;
+    margin-left: 36%;
+    align-items: center;
+    padding: 10px;
+}
+.freeDelivery p, .freeReturns p{
+    padding-left: 5px;
 }
 
 
