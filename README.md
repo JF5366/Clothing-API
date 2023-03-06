@@ -1,7 +1,7 @@
 # E-Commerce Clothing Store
 
 ## Demo link:
-Access my site at [google.com](https://google.com)
+Access my site at [netlify](https://clothing-api.netlify.app/)
 
 ## Table of Content:
 - [About The App](#about-the-app)
@@ -14,15 +14,12 @@ Access my site at [google.com](https://google.com)
 ## About The App
 An e-commerce clothing store application created using data from the ASOS API.
 
-## Deployment
-View the live site here: `https://clothing-api.netlify.app/`
-
 ## Screenshots
 
-![Home page](/src/images/home.png "Home")
-![Home page - categories](/src/images/categories.png "Categories")
-![Search page](/src/images/skirt.png "Search")
-![Wishlist](/src/images/wishlist.png "Wishlist")
+![Home page](https://github.com/JF5366/Clothing-API/src/images/home.png?raw=true "Home")
+![Home page - categories](https://github.com/JF5366/Clothing-API/src/images/categories.png?raw=true "Categories")
+![Search page](https://github.com/JF5366/Clothing-API/src/images/skirt.png?raw=true "Search")
+![Wishlist](https://github.com/JF5366/Clothing-API/src/images/wishlist.png?raw=true "Wishlist")
 
 ## Technologies
 Built with React, Redux, JavaScript, and CSS.
