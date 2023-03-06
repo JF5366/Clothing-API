@@ -1,5 +1,4 @@
-# Project Title
-E-Commerce Clothing Store
+# E-Commerce Clothing Store
 
 ## Demo link:
 Access my site at [google.com](https://google.com)
@@ -49,3 +48,4 @@ Main challenges included API authentication, properly setting up react redux too
 - Increment and devcrement item quantity 
 - Develop search page to build an outfit based on search parameters
 - Login
+-
