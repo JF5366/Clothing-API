@@ -111,8 +111,8 @@ const Cart = () => {
   };
   const checkout = () => {
 
-    const cartTotal = state.reduce((a, c) => a + c.price.current.value, 0);
-   
+    const cartTota = state.reduce((a, c) => a + c.price.current.value, 0);
+   const cartTotal = cartTota.toFixed(2)
 
 
     return (

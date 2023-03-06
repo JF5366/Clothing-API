@@ -8,7 +8,7 @@ export default function () {
                 className="carousel" 
                 autoPlay 
                 infiniteLoop={true} 
-                interval="2000"
+                interval="1800"
                 showStatus={false}
                 >
                     <div className="carouselCard">
