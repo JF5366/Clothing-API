@@ -16,7 +16,7 @@ An e-commerce clothing store application created using data from the ASOS API.
 
 ## Screenshots
 
-![Home page](https://github.com/JF5366/Clothing-API/src/images/home.png?raw=true "Home")
+![Home page](https://github.com/JF5366/Clothing-API/blob/e3a17a575ae245d60abb6a9890f91da5521af0a6/src/images/home.png?raw=true "Home")
 ![Home page - categories](https://github.com/JF5366/Clothing-API/src/images/categories.png?raw=true "Categories")
 ![Search page](https://github.com/JF5366/Clothing-API/clothing-api/src/images/skirt.png?raw=true "Search")
 ![Wishlist](https://github.com/JF5366/Clothing-API/src/images/wishlist.png?raw=true "Wishlist")
