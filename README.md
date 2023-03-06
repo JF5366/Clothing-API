@@ -17,9 +17,9 @@ An e-commerce clothing store application created using data from the ASOS API.
 ## Screenshots
 
 ![Home page](https://github.com/JF5366/Clothing-API/blob/e3a17a575ae245d60abb6a9890f91da5521af0a6/src/images/home.png?raw=true "Home")
-![Home page - categories](https://github.com/JF5366/Clothing-API/src/images/categories.png?raw=true "Categories")
-![Search page](https://github.com/JF5366/Clothing-API/clothing-api/src/images/skirt.png?raw=true "Search")
-![Wishlist](https://github.com/JF5366/Clothing-API/src/images/wishlist.png?raw=true "Wishlist")
+![Home page - categories](https://github.com/JF5366/Clothing-API/blob/f675fa262ba78d36045634ad5da2779d4c1f5634/src/images/categories.png?raw=true "Categories")
+![Search page](https://github.com/JF5366/Clothing-API/blob/f675fa262ba78d36045634ad5da2779d4c1f5634/src/images/skirt.png?raw=true "Search")
+![Wishlist](https://github.com/JF5366/Clothing-API/blob/f675fa262ba78d36045634ad5da2779d4c1f5634/src/images/wishlist.png?raw=true "Wishlist")
 
 ## Technologies
 Built with React, Redux, JavaScript, and CSS.
@@ -42,7 +42,8 @@ Main challenges included API authentication, properly setting up react redux too
 ## Future Developments
 
 - Add more images and details to each product page
-- Increment and devcrement item quantity 
+- Increment and decrement item quantity in cart
 - Develop search page to build an outfit based on search parameters
 - Login
--
+- Reviews form
+- Blog

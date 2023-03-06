@@ -22,7 +22,7 @@ export default function Main() {
         </div>
         <div className="dashHeader">
             <h1>DISCOVER FASHION</h1>
-            <h3>Shop the hottest trands from ...</h3>
+            <h3>Shop the latest trends ...</h3>
         </div>
         <div className="dashParent">
             <Link to="/dresses" className="dressesLink" key="dressesLink">

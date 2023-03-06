@@ -12,46 +12,46 @@ export default function () {
                 showStatus={false}
                 >
                     <div className="carouselCard">
-                    <img src="https://marketplace-images.asos.com/user/a2131e01-ceef-46e5-8abe-e0fda73ba67a_large.jpg" />
+                    <img src="https://marketplace-images.asos.com/user/0fea5b45-fa6d-4538-b6da-db980d80edfd_large.jpg" />
                     <p className="legend">FASHION</p>
                 </div>
                 <div className="carouselCard">
-                    <img src="https://marketplace-images.asos.com/user/8dc899e5-a0e1-4381-8a76-6617f359da4c_large.jpg" />
+                    <img src="https://images.pexels.com/photos/2529172/pexels-photo-2529172.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />
                     <p className="legend">PANTS</p>
                 </div>
                 <div className="carouselCard">
-                    <img src="https://marketplace-images.asos.com/user/d01e1911-b33c-49e7-85d3-1486368452c0_large.jpg" />
+                    <img src="https://images.pexels.com/photos/923210/pexels-photo-923210.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />
                     <p className="legend">DRESSES</p>
                 </div>
                 <div className="carouselCard">
-                    <img src="https://marketplace-images.asos.com/user/9aacc12c-e906-47ba-a2c5-6d6e09e7131e_large.jpg" />
+                    <img src="https://images.pexels.com/photos/15113597/pexels-photo-15113597.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />
                     <p className="legend">SHOES</p>
                 </div>
                 <div className="carouselCard">
-                    <img src="https://marketplace-images.asos.com/user/1ce10f66-f20d-4056-a88d-af028cd4a66f_large.jpg"/>
+                    <img src="https://images.pexels.com/photos/14448670/pexels-photo-14448670.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"/>
                     <p className="legend">TOPS</p>
                 </div>
                 <div className="carouselCard">
-                    <img src="https://marketplace-images.asos.com/user/2dfa5f09-7395-431f-a475-8f3c13bfc14b_large.jpg" />
+                    <img src="https://images.pexels.com/photos/9775875/pexels-photo-9775875.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />
                     <p className="legend">ACTIVEWEAR</p>
                     </div>
 
                     <div className="carouselCard">
-                    <img src="https://marketplace-images.asos.com/user/0fea5b45-fa6d-4538-b6da-db980d80edfd_large.jpg" />
+                    <img src="https://images.pexels.com/photos/8221268/pexels-photo-8221268.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />
                     <p className="legend">COATS</p>
                     </div>
                     
                     <div className="carouselCard">
-                    <img src="https://marketplace-images.asos.com/user/3fbe2c8d-e8a7-40de-b1df-318a60da1863_large.jpg" />
+                    <img src="https://images.pexels.com/photos/2229490/pexels-photo-2229490.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />
                     <p className="legend">LOUNGE</p>
                     </div>
 
                 <div className="carouselCard">
-                    <img src="https://marketplace-images.asos.com/user/5f06ee28-3667-4fa9-9232-299698fb9a9e_large.jpg" />
+                    <img src="https://images.pexels.com/photos/7825429/pexels-photo-7825429.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />
                     <p className="legend">SWIMWEAR</p>
                 </div>
                 <div className="carouselCard">
-                    <img src="https://marketplace-images.asos.com/user/78747011-d110-4934-835b-9877e9b421a9_large.jpg" />
+                    <img src="https://images.pexels.com/photos/4904453/pexels-photo-4904453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />
                     <p className="legend">ACCESSORIES</p>
                 </div>
             </Carousel>

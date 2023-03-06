@@ -1,8 +1,8 @@
 /* //////////////CAROUSEL///////////////// */
 .carouselParent{
     width: 100vw;
-    height: 70vh;
-    border: 2px solid black;
+    height: 90vh;
+  
     margin: auto;
     z-index: 5;
     margin-top: 0em;
@@ -12,10 +12,16 @@
       /* border: 2px solid green; */
         display: flex;
         flex-direction: column;
+   }
+.carouselRoot{
+  height: 100%;
+  border: 2px solid black;
+  
     }
     .carouselCard{
-      padding:10px;
-      transform: translate(-1%, -2%);
+      padding: 30px 0;
+      transform: translate(0, -18%);
+      
     }
    .legend{
        /*  cant figre out how to change the writing style    */
@@ -26,18 +32,15 @@
      padding-top: 2em;
      display: none;
    }
-   .slide{
-    /*  this is the top image part  and determines the height */
-     /* border: 5px solid green; */
-     height: 70vh;
-   }
 
    
    /* this is the main carousel size: */
-   div.carousel.carousel-slider{
+.carousel-slider{
     /* border: 5px solid orange; */
     margin: 0;
      height: 100%;
+     border: 2px solid black;
+     height: 85vh;
    }
    .carousel .thumbs-wrapper{
       display: none;
